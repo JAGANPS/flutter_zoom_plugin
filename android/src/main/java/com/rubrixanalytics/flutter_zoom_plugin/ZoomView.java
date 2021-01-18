@@ -65,7 +65,7 @@ public class ZoomView  implements PlatformView,
                 break;
             case "meeting_status":
                 meetingStatus(result);
-                break;
+                break;  
             default:
                 result.notImplemented();
         }
@@ -98,6 +98,7 @@ public class ZoomView  implements PlatformView,
                     public void onZoomAuthIdentityExpired() {
 
                     }
+                    
 
                     @Override
                     public void onZoomSDKInitializeResult(int errorCode, int internalErrorCode) {
@@ -140,7 +141,7 @@ public class ZoomView  implements PlatformView,
         opts.no_disconnect_audio = parseBoolean(options, "noDisconnectAudio", false);
         opts.no_audio = parseBoolean(options, "noAudio", false);
         opts.no_webinar_register_dialog = parseBoolean(options, "no_webinar_register_dialog", false);
-        opts.participant_id = "gggh@gmail.com";
+        
       //  opts.onJoinWebinarNeedUserNameAndEmail = parseBoolean(options, "onJoinWebinarNeedUserNameAndEmail", true);
 ///tested here without forum please proceed it 
 //removed true for webinar
@@ -152,13 +153,13 @@ public class ZoomView  implements PlatformView,
         params.meetingNo = options.get("meetingId");
         params.password = options.get("meetingPassword");
          params.displayName = options.get("userId");
+   
        //removed email address
        // params.no_webinar_register_dialog=options.get("no_webinar_register_dialog");
         meetingService.joinMeetingWithParams(context, params, opts);
-        
-
         result.success(true);
     }
+    
 
 
 
@@ -191,6 +192,7 @@ public class ZoomView  implements PlatformView,
 		params.userType = MeetingService.USER_TYPE_API_USER;
 		params.zoomToken = options.get("zoomToken");
 		params.zoomAccessToken = options.get("zoomAccessToken");
+        
 
 ///hgdfjchdtfcxtydfxty
 //removed email address
@@ -228,7 +230,14 @@ public class ZoomView  implements PlatformView,
 ///removed no webinar option
 
 
-
+public void setRegisterWebinarInfo(String name,
+                            String email,
+                            boolean cancel){
+                         
+this.name = get("userId");
+this.email =set("wtfywf@ghs.com");
+this.cancel = false;
+                            }
   
     @Override
     public void dispose() {}

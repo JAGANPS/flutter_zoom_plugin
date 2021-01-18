@@ -8,6 +8,8 @@ class ZoomOptions {
 }
 //gfxghgxgxgxgfxchxghsdhxdhcshjdhgzghxshxt
 class ZoomMeetingOptions {
+  String name;
+  String email;
   String userId;
   String displayName;
   String meetingId;
@@ -25,7 +27,11 @@ class ZoomMeetingOptions {
 //jcuvhgcxcjchxcydjfududytdhccujhcucjhcgyccgychcgc
 ///kngifyfufydugjdrtkfydududgudkgfigif
   ZoomMeetingOptions(
-      {this.userId,
+   
+      {
+         this.email="asdf@ffh.com",
+        this.userId,
+         this.name,
       this.displayName,
       this.meetingId,
       this.meetingPassword,

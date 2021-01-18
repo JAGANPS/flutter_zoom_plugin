@@ -19,7 +19,7 @@ class MeetingWidget extends StatelessWidget {
       appSecret: "hffkfpsfKzDWXoImVhlRi2hryjkKAztegQNM",
     );
     this.meetingOptions = new ZoomMeetingOptions(
-       // userId:"jagan@gmail.com",
+       userId:"jagan@gmail.com",
         meetingId: meetingId,
         meetingPassword: meetingPassword,
         disableDialIn: "true",
