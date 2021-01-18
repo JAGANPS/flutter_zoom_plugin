@@ -233,10 +233,7 @@ public class ZoomView  implements PlatformView,
 public void setRegisterWebinarInfo(String name,
                             String email,
                             boolean cancel){
-                         
-this.name = get("userId");
-this.email =set("wtfywf@ghs.com");
-this.cancel = false;
+                                //removed the values here
                             }
   
     @Override
