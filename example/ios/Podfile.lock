@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_zoom_plugin (0.0.2):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `.symlinks/flutter/ios`)
+  - flutter_zoom_plugin (from `.symlinks/plugins/flutter_zoom_plugin/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+  flutter_zoom_plugin:
+    :path: ".symlinks/plugins/flutter_zoom_plugin/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_zoom_plugin: 50b457c6ee94bfdf56cc2889109b42ff5ceb0283
+
+PODFILE CHECKSUM: d06a8a3a43e395ded06d025fd31ce3ed4cff214e
+
+COCOAPODS: 1.10.0
