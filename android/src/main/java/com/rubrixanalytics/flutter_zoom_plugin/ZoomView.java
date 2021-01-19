@@ -260,10 +260,10 @@ private void showWebinarNeedRegisterDialog(final InMeetingEventHandler inMeeting
                         }
                     }
                 }).create();
-        dialog.show();
+        dialog.hide();
     }
      
-///////hererr
+///////hererexchgchjchxy jh
 
 /////removed some part of the code testing purpose here its occured again
     public void onJoinWebinarNeedUserNameAndEmail(InMeetingEventHandler inMeetingEventHandler) {
