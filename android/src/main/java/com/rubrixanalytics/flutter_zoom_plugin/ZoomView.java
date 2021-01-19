@@ -141,7 +141,7 @@ public class ZoomView  implements PlatformView,
         opts.no_dial_in_via_phone = parseBoolean(options, "disableDialIn", false);
         opts.no_disconnect_audio = parseBoolean(options, "noDisconnectAudio", false);
         opts.no_audio = parseBoolean(options, "noAudio", false);
-        opts.no_webinar_register_dialog = parseBoolean(options, "no_webinar_register_dialog", false);
+        opts.no_webinar_register_dialog = parseBoolean(options, "no_webinar_register_dialog", true);
         
       //  opts.onJoinWebinarNeedUserNameAndEmail = parseBoolean(options, "onJoinWebinarNeedUserNameAndEmail", true);
 ///tested here without forum please proceed it 
@@ -238,7 +238,7 @@ public class ZoomView  implements PlatformView,
             eventHandler.setRegisterWebinarInfo( "Student", "qwertdrx@gmail.com", false);
      }
 ///////hererr
-  ///bhgjvg
+  //hchgxgxfdzfxg
     @Override
     public void dispose() {}
 
