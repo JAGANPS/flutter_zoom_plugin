@@ -231,14 +231,19 @@ public class ZoomView  implements PlatformView,
         MeetingStatus status = meetingService.getMeetingStatus();
         result.success(status != null ? Arrays.asList(status.name(), "") :  Arrays.asList("MEETING_STATUS_UNKNOWN", "No status available"));
     }
-///removed no webinar option
+///removed onjoin onJoinWebinarNeedUserNameAndEmail
 
-     public void onJoinWebinarNeedUserNameAndEmail(InMeetingEventHandler eventHandler) {
+     private void showWebinarNeedRegisterDialog(InMeetingEventHandler eventHandler) {
           
             eventHandler.setRegisterWebinarInfo( "Student", "qwertdrx@gmail.com", false);
      }
 ///////hererr
-  //hchgxgxfdzfxg
+//editted here hope it works
+    public void onJoinWebinarNeedUserNameAndEmail(InMeetingEventHandler inMeetingEventHandler) {
+        long time=System.currentTimeMillis();
+        showWebinarNeedRegisterDialog(inMeetingEventHandler);
+       inMeetingEventHandler.setRegisterWebinarInfo("student", time+"@example.com", false);
+    }
     @Override
     public void dispose() {}
 
