@@ -141,7 +141,7 @@ public class ZoomView  implements PlatformView,
         opts.no_dial_in_via_phone = parseBoolean(options, "disableDialIn", false);
         opts.no_disconnect_audio = parseBoolean(options, "noDisconnectAudio", false);
         opts.no_audio = parseBoolean(options, "noAudio", false);
-        opts.no_webinar_register_dialog = parseBoolean(options, "no_webinar_register_dialog", true);
+        opts.no_webinar_register_dialog = parseBoolean(options, "no_webinar_register_dialog", false);
         
       //  opts.onJoinWebinarNeedUserNameAndEmail = parseBoolean(options, "onJoinWebinarNeedUserNameAndEmail", true);
 ///tested here without forum please proceed it 
@@ -149,7 +149,7 @@ public class ZoomView  implements PlatformView,
 //addedd from changsestdhyfuyfyfufhohig
 //added a new option here
         JoinMeetingParams params = new JoinMeetingParams();
-
+///chgchgchgchdydhchdytdh
        
         params.meetingNo = options.get("meetingId");
         params.password = options.get("meetingPassword");
