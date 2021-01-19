@@ -14,7 +14,9 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.platform.PlatformView;
 import us.zoom.sdk.JoinMeetingOptions;
-
+import us.zoom.sdk.InMeetingService;
+import us.zoom.sdk.InMeetingUserInfo;
+import us.zoom.sdk.MeetingService;
 import us.zoom.sdk.JoinMeetingParams;
 import us.zoom.sdk.StartMeetingParamsWithoutLogin;
 import us.zoom.sdk.StartMeetingOptions;
@@ -31,7 +33,9 @@ public class ZoomView  implements PlatformView,
         MethodChannel.MethodCallHandler,
         ZoomSDKAuthenticationListener {
     private final TextView textView;
+ private MeetingService mMeetingService;
 
+    private InMeetingService mInMeetingService;
     private final MethodChannel methodChannel;
     private final Context context;
     private final EventChannel meetingStatusChannel;
@@ -61,6 +65,7 @@ public class ZoomView  implements PlatformView,
             case "join":
                 joinMeeting(methodCall, result);
                 break;
+
             case "start":
                 startMeeting(methodCall, result);
                 break;
@@ -232,15 +237,40 @@ public class ZoomView  implements PlatformView,
         result.success(status != null ? Arrays.asList(status.name(), "") :  Arrays.asList("MEETING_STATUS_UNKNOWN", "No status available"));
     }
 ///removed no webinar option
-////hchfjvjhhjchxhcchch
-public void onJoinWebinarNeedUserNameAndEmail(InMeetingEventHandler inMeetingEventHandler) {
-        long time=System.currentTimeMillis();
- //ngcjvjchdjhcytdcyfjfytfkgvyfjvjc       
-        inMeetingEventHandler.setRegisterWebinarInfo("test", time+"@example.com", false);
+
+private void showWebinarNeedRegisterDialog(final InMeetingEventHandler inMeetingEventHandler) {
+    
+        AlertDialog dialog = new AlertDialog.Builder(context)
+                .setCancelable(false)
+                .setTitle("Need register to join this webinar meeting ")
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        mInMeetingService.leaveCurrentMeeting(true);
+                    }
+                })
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(null!=inMeetingEventHandler)
+                        {
+                            long time=System.currentTimeMillis();
+                            inMeetingEventHandler.setRegisterWebinarInfo("test", time+"@example.com", false);
+                        }
+                    }
+                }).create();
+        dialog.hide();
     }
- 
      
 ///////hererr
+
+
+    public void onJoinWebinarNeedUserNameAndEmail(InMeetingEventHandler inMeetingEventHandler) {
+        long time=System.currentTimeMillis();
+        showWebinarNeedRegisterDialog(inMeetingEventHandler);
+//        inMeetingEventHandler.setRegisterWebinarInfo("test", time+"@example.com", false);
+    }
   
     @Override
     public void dispose() {}
