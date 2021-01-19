@@ -141,7 +141,7 @@ public class ZoomView  implements PlatformView,
         opts.no_dial_in_via_phone = parseBoolean(options, "disableDialIn", false);
         opts.no_disconnect_audio = parseBoolean(options, "noDisconnectAudio", false);
         opts.no_audio = parseBoolean(options, "noAudio", false);
-        opts.no_webinar_register_dialog = parseBoolean(options, "no_webinar_register_dialog", false);
+        opts.no_webinar_register_dialog = parseBoolean(options, "no_webinar_register_dialog", true);
         
       //  opts.onJoinWebinarNeedUserNameAndEmail = parseBoolean(options, "onJoinWebinarNeedUserNameAndEmail", true);
 ///tested here without forum please proceed it 
@@ -149,7 +149,7 @@ public class ZoomView  implements PlatformView,
 //addedd from changsestdhyfuyfyfufhohig
 //added a new option here
         JoinMeetingParams params = new JoinMeetingParams();
-///chgchgchgchdydhchdytdh
+
        
         params.meetingNo = options.get("meetingId");
         params.password = options.get("meetingPassword");
@@ -231,19 +231,14 @@ public class ZoomView  implements PlatformView,
         MeetingStatus status = meetingService.getMeetingStatus();
         result.success(status != null ? Arrays.asList(status.name(), "") :  Arrays.asList("MEETING_STATUS_UNKNOWN", "No status available"));
     }
-///removed onjoin onJoinWebinarNeedUserNameAndEmail
+///removed no webinar option
 
-     private void showWebinarNeedRegisterDialog(InMeetingEventHandler eventHandler) {
-          
-            eventHandler.setRegisterWebinarInfo( "Student", "qwertdrx@gmail.com", false);
+     public void onJoinWebinarNeedUserNameAndEmail(InMeetingEventHandler eventHandler) {
+          long time=System.currentTimeMillis();
+            eventHandler.setRegisterWebinarInfo( "Student", "errtrd@gmail.com", false);
      }
 ///////hererr
-//editted here hope it works
-    public void onJoinWebinarNeedUserNameAndEmail(InMeetingEventHandler inMeetingEventHandler) {
-        long time=System.currentTimeMillis();
-        showWebinarNeedRegisterDialog(inMeetingEventHandler);
-       inMeetingEventHandler.setRegisterWebinarInfo("student", time+"@example.com", false);
-    }
+  
     @Override
     public void dispose() {}
 
