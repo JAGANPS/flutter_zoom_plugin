@@ -80,7 +80,7 @@ class StartMeetingWidget extends StatelessWidget {
                   .then((joinMeetingResult) {
 
                 timer = Timer.periodic(new Duration(seconds: 2), (timer) {
-                  controller.meetingStatus(this.meetingOptions.meetingId,this.meetingOptions.displayName)
+                  controller.meetingStatus(this.meetingOptions.meetingId)
                       .then((status) {
                     print("Meeting Status Polling: " + status[0] + " - " + status[1]);
                   });

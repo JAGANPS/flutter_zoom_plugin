@@ -99,8 +99,8 @@ class ZoomViewController {
     var optionMap = new Map<String, String>();
     optionMap.putIfAbsent("userId", () => options.userId);
     optionMap.putIfAbsent("displayName", () => options.displayName);
-   
-     optionMap.putIfAbsent("meetingId", () => options.meetingId);
+    optionMap.putIfAbsent("zoomAccessToken",()=> options.zoomAccessToken);
+    optionMap.putIfAbsent("meetingId", () => options.meetingId);
     optionMap.putIfAbsent("meetingPassword", () => options.meetingPassword);
     optionMap.putIfAbsent("disableDialIn", () => options.disableDialIn);
     optionMap.putIfAbsent("disableDrive", () => options.disableDrive);
@@ -113,12 +113,12 @@ class ZoomViewController {
   }
   //emailaddes=
 //hfcyduvxfjctsyfctrsyfghxrifsrctrsujxsyfhxfcrtdsufjxy
-  Future<List> meetingStatus(String meetingId,String displayName) async {
+  Future<List> meetingStatus(String meetingId) async {
     assert(meetingId != null);
 
     var optionMap = new Map<String, String>();
     optionMap.putIfAbsent("meetingId", () => meetingId);
-    optionMap.putIfAbsent("displayName", () => displayName);
+    
     return _methodChannel.invokeMethod('meeting_status', optionMap);
   }
 
@@ -126,6 +126,6 @@ class ZoomViewController {
     return _zoomStatusEventChannel.receiveBroadcastStream();
   }
 
-  
+
 }
 //removed weninar optooion

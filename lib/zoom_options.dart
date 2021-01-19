@@ -10,7 +10,7 @@ class ZoomOptions {
 class ZoomMeetingOptions {
  
   String userId;
-  
+ 
   String displayName;
   String meetingId;
   String meetingPassword;

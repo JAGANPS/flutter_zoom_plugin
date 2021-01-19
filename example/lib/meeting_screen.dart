@@ -19,7 +19,9 @@ class MeetingWidget extends StatelessWidget {
       appSecret: "hffkfpsfKzDWXoImVhlRi2hryjkKAztegQNM",
     );
     this.meetingOptions = new ZoomMeetingOptions(
-       userId:"jagan@gmail.com",
+       displayName:"jaganPS",
+       userId: "jagan@gmail.com",
+       zoomAccessToken:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6InhoQjREZmxpUlZxMnozT2wxZkN3c2ciLCJleHAiOjE2MzIyNDQ0NDAsImlhdCI6MTYwMDcwMzEzOX0.r5d4GYaBhcjQ3ID7dRbRqDieyABwAdx03Up9e0z6mPY",
         meetingId: meetingId,
         meetingPassword: meetingPassword,
         disableDialIn: "true",
@@ -78,7 +80,7 @@ class MeetingWidget extends StatelessWidget {
                     .then((joinMeetingResult) {
                   timer = Timer.periodic(new Duration(seconds: 2), (timer) {
                     controller
-                        .meetingStatus(this.meetingOptions.meetingId,this.meetingOptions.displayName)
+                        .meetingStatus(this.meetingOptions.meetingId)
                         .then((status) {
                       print("Meeting Status Polling: " +
                           status[0] +

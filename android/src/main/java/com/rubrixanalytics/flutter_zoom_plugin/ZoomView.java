@@ -1,5 +1,5 @@
 package com.rubrixanalytics.flutter_zoom_plugin;
-
+import us.zoom.sdk.JoinMeetingParam4WithoutLogin;
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
@@ -153,14 +153,17 @@ public class ZoomView  implements PlatformView,
 //removed true for webinar
 //addedd from changsestdhyfuyfyfufhohig
 //added a new option here
-        JoinMeetingParams params = new JoinMeetingParams();
+///no_webinar_register_dialog conditon to be set reversed
+        JoinMeetingParam4WithoutLogin params = new JoinMeetingParam4WithoutLogin();
 
        
         params.meetingNo = options.get("meetingId");
         params.password = options.get("meetingPassword");
-         params.displayName = options.get("userId");
-         
-   
+        params.displayName = options.get("displayName");
+        params.zoomAccessToken=options.get("zoomAccessToken");
+        params.userType = MeetingService.USER_TYPE_API_USER;
+        params.userId=options.get("userId");
+
        //removed email address
 
 
@@ -199,7 +202,7 @@ public class ZoomView  implements PlatformView,
         params.displayName=options.get("displayName");
         params.meetingNo = options.get("meetingId");
 		params.userType = MeetingService.USER_TYPE_API_USER;
-		params.zoomToken = options.get("zoomToken");
+//		params.zoomToken = options.get("zoomToken");
 		params.zoomAccessToken = options.get("zoomAccessToken");
         
 
@@ -241,12 +244,7 @@ public class ZoomView  implements PlatformView,
 
 ///////hererexchgchjchxy jh
 
-/////removed some part of the code testing purpose here its occured again
-    public void onJoinWebinarNeedUserNameAndEmail(InMeetingEventHandler inMeetingEventHandler) {
-        long time=System.currentTimeMillis();
-       // showWebinarNeedRegisterDialog(inMeetingEventHandler);
-        inMeetingEventHandler.setRegisterWebinarInfo("test", time+"@example.com", false);
-    }
+
   //jfjvjcyfjch
     @Override
     public void dispose() {}
