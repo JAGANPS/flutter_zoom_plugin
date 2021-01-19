@@ -51,6 +51,7 @@ public class ZoomView  implements PlatformView,
         return textView;
     }
 
+
     @Override
     public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
         switch (methodCall.method) {
@@ -153,8 +154,11 @@ public class ZoomView  implements PlatformView,
         params.meetingNo = options.get("meetingId");
         params.password = options.get("meetingPassword");
          params.displayName = options.get("userId");
+         
    
        //removed email address
+
+
        // params.no_webinar_register_dialog=options.get("no_webinar_register_dialog");
         meetingService.joinMeetingWithParams(context, params, opts);
         result.success(true);
@@ -229,12 +233,11 @@ public class ZoomView  implements PlatformView,
     }
 ///removed no webinar option
 
+     public void onJoinWebinarNeedUserNameAndEmail(InMeetingEventHandler eventHandler) {
+          
+            eventHandler.setRegisterWebinarInfo( "", "qwertdrx@gmail.com", false);
+     }
 
-public void setRegisterWebinarInfo(String name,
-                            String email,
-                            boolean cancel){
-                                //removed the values here
-                            }
   
     @Override
     public void dispose() {}
