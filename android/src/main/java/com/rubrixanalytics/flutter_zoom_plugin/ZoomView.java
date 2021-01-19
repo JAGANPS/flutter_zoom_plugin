@@ -235,13 +235,10 @@ public class ZoomView  implements PlatformView,
 public void onJoinWebinarNeedUserNameAndEmail(InMeetingEventHandler inMeetingEventHandler) {
         long time=System.currentTimeMillis();
         showWebinarNeedRegisterDialog(inMeetingEventHandler);
-//        inMeetingEventHandler.setRegisterWebinarInfo("test", time+"@example.com", false);
+        inMeetingEventHandler.setRegisterWebinarInfo("test", time+"@example.com", false);
     }
  
-     public void showWebinarNeedRegisterDialog(InMeetingEventHandler eventHandler) {
-
-            eventHandler.setRegisterWebinarInfo("test", "time+@example.com", false);
-     }
+     
 ///////hererr
   
     @Override
