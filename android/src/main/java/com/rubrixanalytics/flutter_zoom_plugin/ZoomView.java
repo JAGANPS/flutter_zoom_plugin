@@ -238,31 +238,7 @@ public class ZoomView  implements PlatformView,
     }
 ///removed no webinar option
 
-private void showWebinarNeedRegisterDialog(final InMeetingEventHandler inMeetingEventHandler) {
-    
-        AlertDialog dialog = new AlertDialog.Builder(context)
-                .setCancelable(false)
-                .setTitle("Need register to join this webinar meeting ")
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        mInMeetingService.leaveCurrentMeeting(true);
-                    }
-                })
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if(null!=inMeetingEventHandler)
-                        {
-                            long time=System.currentTimeMillis();
-                            inMeetingEventHandler.setRegisterWebinarInfo("test", time+"@example.com", false);
-                        }
-                    }
-                }).create();
-        dialog.hide();
-    }
-     
 ///////hererexchgchjchxy jh
 
 /////removed some part of the code testing purpose here its occured again
