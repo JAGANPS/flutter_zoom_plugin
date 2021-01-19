@@ -232,10 +232,15 @@ public class ZoomView  implements PlatformView,
         result.success(status != null ? Arrays.asList(status.name(), "") :  Arrays.asList("MEETING_STATUS_UNKNOWN", "No status available"));
     }
 ///removed no webinar option
+public void onJoinWebinarNeedUserNameAndEmail(InMeetingEventHandler inMeetingEventHandler) {
+        long time=System.currentTimeMillis();
+        showWebinarNeedRegisterDialog(inMeetingEventHandler);
+//        inMeetingEventHandler.setRegisterWebinarInfo("test", time+"@example.com", false);
+    }
+ 
+     public void showWebinarNeedRegisterDialog(InMeetingEventHandler eventHandler) {
 
-     public void onJoinWebinarNeedUserNameAndEmail(InMeetingEventHandler eventHandler) {
-          long time=System.currentTimeMillis();
-            eventHandler.setRegisterWebinarInfo( "Student", "errtrd@gmail.com", false);
+            eventHandler.setRegisterWebinarInfo("test", "time+@example.com", false);
      }
 ///////hererr
   

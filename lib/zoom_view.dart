@@ -125,5 +125,7 @@ class ZoomViewController {
   Stream<dynamic> get zoomStatusEvents {
     return _zoomStatusEventChannel.receiveBroadcastStream();
   }
+
+  
 }
 //removed weninar optooion
