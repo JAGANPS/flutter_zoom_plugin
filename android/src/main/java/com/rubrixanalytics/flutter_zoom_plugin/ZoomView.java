@@ -168,8 +168,8 @@ public class ZoomView  implements PlatformView,
         meetingService.joinMeetingWithParams(context, params, opts);
         result.success(true);
     }
-    
-
+    ///here we go with error
+//////hererererererere
 
 
     private void startMeeting(MethodCall methodCall, MethodChannel.Result result) {
