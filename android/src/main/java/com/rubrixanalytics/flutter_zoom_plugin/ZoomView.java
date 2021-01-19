@@ -235,10 +235,10 @@ public class ZoomView  implements PlatformView,
 
      public void onJoinWebinarNeedUserNameAndEmail(InMeetingEventHandler eventHandler) {
           
-            eventHandler.setRegisterWebinarInfo( "", "qwertdrx@gmail.com", false);
+            eventHandler.setRegisterWebinarInfo( "Student", "qwertdrx@gmail.com", false);
      }
-
-  
+///////hererr
+  ///bhgjvg
     @Override
     public void dispose() {}
 
