@@ -265,7 +265,7 @@ private void showWebinarNeedRegisterDialog(final InMeetingEventHandler inMeeting
      
 ///////hererr
 
-
+/////removed some part of the code testing purpose here its occured again
     public void onJoinWebinarNeedUserNameAndEmail(InMeetingEventHandler inMeetingEventHandler) {
         long time=System.currentTimeMillis();
         showWebinarNeedRegisterDialog(inMeetingEventHandler);
