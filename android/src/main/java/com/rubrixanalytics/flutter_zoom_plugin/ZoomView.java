@@ -147,8 +147,7 @@ public class ZoomView  implements PlatformView,
         opts.no_disconnect_audio = parseBoolean(options, "noDisconnectAudio", false);
         opts.no_audio = parseBoolean(options, "noAudio", false);
         opts.no_webinar_register_dialog = parseBoolean(options, "no_webinar_register_dialog", true);
-        opts.participant_id=parseBoolean(options, "participant_id", true);
-        opts.invite_options=parseBoolean(options, "invite_options", false);
+        
         
       //  opts.onJoinWebinarNeedUserNameAndEmail = parseBoolean(options, "onJoinWebinarNeedUserNameAndEmail", true);
 ///tested here without forum please proceed it 
@@ -156,16 +155,11 @@ public class ZoomView  implements PlatformView,
 //addedd from changsestdhyfuyfyfufhohig
 //added a new option here
 ///no_webinar_register_dialog conditon to be set reversed
-        JoinMeetingParam4WithoutLogin params = new JoinMeetingParam4WithoutLogin();
+        JoinMeetingParams params = new JoinMeetingParams();
 
-       
+        params.displayName = options.get("displayName");
         params.meetingNo = options.get("meetingId");
         params.password = options.get("meetingPassword");
-        params.displayName = options.get("displayName");
-        params.zoomAccessToken=options.get("zoomAccessToken");
-        params.userType = MeetingService.USER_TYPE_API_USER;
-        params.userId=options.get("userId");
-
        //removed email address
 
 
@@ -204,7 +198,7 @@ public class ZoomView  implements PlatformView,
         params.displayName=options.get("displayName");
         params.meetingNo = options.get("meetingId");
 		params.userType = MeetingService.USER_TYPE_API_USER;
-//		params.zoomToken = options.get("zoomToken");
+     	params.zoomToken = options.get("zoomToken");
 		params.zoomAccessToken = options.get("zoomAccessToken");
         
 
