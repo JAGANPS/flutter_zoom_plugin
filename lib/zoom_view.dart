@@ -79,7 +79,8 @@ class ZoomViewController {
     
    // optionMap.putIfAbsent("MeetingConfig_PrePopulateWebinarRegistrationInfo", () => options.meetingConfig_PrePopulateWebinarRegistrationInfo);
     
-   
+   optionMap.putIfAbsent("userId", () => options.userId);
+    optionMap.putIfAbsent("displayName", () => options.displayName);
     optionMap.putIfAbsent("meetingId", () => options.meetingId);
     optionMap.putIfAbsent("meetingPassword", () => options.meetingPassword);
     optionMap.putIfAbsent("zoomToken", () => options.zoomToken);
@@ -97,9 +98,7 @@ class ZoomViewController {
   Future<bool> joinMeeting(ZoomMeetingOptions options) async {
     assert(options != null);
     var optionMap = new Map<String, String>();
-    optionMap.putIfAbsent("userId", () => options.userId);
     optionMap.putIfAbsent("displayName", () => options.displayName);
-    optionMap.putIfAbsent("zoomAccessToken",()=> options.zoomAccessToken);
     optionMap.putIfAbsent("meetingId", () => options.meetingId);
     optionMap.putIfAbsent("meetingPassword", () => options.meetingPassword);
     optionMap.putIfAbsent("disableDialIn", () => options.disableDialIn);
@@ -128,4 +127,4 @@ class ZoomViewController {
 
 
 }
-//removed weninar optooion
+//removed gchgvhgchxhgchgxh

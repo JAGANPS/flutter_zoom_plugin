@@ -1,5 +1,5 @@
 package com.rubrixanalytics.flutter_zoom_plugin;
-import us.zoom.sdk.JoinMeetingParam4WithoutLogin;
+
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
@@ -7,16 +7,15 @@ import android.app.AlertDialog;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import android.content.DialogInterface;
+
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.platform.PlatformView;
 import us.zoom.sdk.JoinMeetingOptions;
-import us.zoom.sdk.InMeetingService;
-import us.zoom.sdk.InMeetingUserInfo;
-import us.zoom.sdk.MeetingService;
+
+
 import us.zoom.sdk.JoinMeetingParams;
 import us.zoom.sdk.StartMeetingParamsWithoutLogin;
 import us.zoom.sdk.StartMeetingOptions;
@@ -33,9 +32,6 @@ public class ZoomView  implements PlatformView,
         MethodChannel.MethodCallHandler,
         ZoomSDKAuthenticationListener {
     private final TextView textView;
- private MeetingService mMeetingService;
-
-    private InMeetingService mInMeetingService;
     private final MethodChannel methodChannel;
     private final Context context;
     private final EventChannel meetingStatusChannel;
@@ -156,13 +152,10 @@ public class ZoomView  implements PlatformView,
 //added a new option here
 ///no_webinar_register_dialog conditon to be set reversed
         JoinMeetingParams params = new JoinMeetingParams();
-
         params.displayName = options.get("displayName");
         params.meetingNo = options.get("meetingId");
         params.password = options.get("meetingPassword");
        //removed email address
-
-
        // params.no_webinar_register_dialog=options.get("no_webinar_register_dialog");
         meetingService.joinMeetingWithParams(context, params, opts);
         result.success(true);
@@ -198,7 +191,7 @@ public class ZoomView  implements PlatformView,
         params.displayName=options.get("displayName");
         params.meetingNo = options.get("meetingId");
 		params.userType = MeetingService.USER_TYPE_API_USER;
-     	params.zoomToken = options.get("zoomToken");
+     	//params.zoomToken = options.get("zoomToken");
 		params.zoomAccessToken = options.get("zoomAccessToken");
         
 

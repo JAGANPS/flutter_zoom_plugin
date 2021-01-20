@@ -10,7 +10,6 @@ class ZoomOptions {
 class ZoomMeetingOptions {
  
   String userId;
- 
   String displayName;
   String meetingId;
   String meetingPassword;
@@ -22,7 +21,7 @@ class ZoomMeetingOptions {
   String disableShare;
   String noDisconnectAudio;
   String noAudio;
-
+//mhvjhvjcvjhchcjhchchjcc
   
 //jcuvhgcxcjchxcydjfududytdhccujhcucjhcgyccgychcgc
 ///kngifyfufydugjdrtkfydududgudkgfigif
@@ -30,8 +29,7 @@ class ZoomMeetingOptions {
    
       {
          
-        this.userId,
-    
+      this.userId,   
       this.displayName,
       this.meetingId,
       this.meetingPassword,
@@ -42,7 +40,5 @@ class ZoomMeetingOptions {
       this.disableInvite,
       this.disableShare,
       this.noDisconnectAudio,
-    
-      
       this.noAudio});
 }
