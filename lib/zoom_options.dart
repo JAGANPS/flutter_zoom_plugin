@@ -21,6 +21,7 @@ class ZoomMeetingOptions {
   String disableShare;
   String noDisconnectAudio;
   String noAudio;
+  String no_webinar_register_dialog;
 //mhvjhvjcvjhchcjhchchjcc
   
 //jcuvhgcxcjchxcydjfududytdhccujhcucjhcgyccgychcgc
@@ -40,5 +41,8 @@ class ZoomMeetingOptions {
       this.disableInvite,
       this.disableShare,
       this.noDisconnectAudio,
-      this.noAudio});
+      this.noAudio,
+      this.no_webinar_register_dialog
+      
+      });
 }
